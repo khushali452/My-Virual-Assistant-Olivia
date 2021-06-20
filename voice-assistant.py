@@ -191,16 +191,20 @@ def respond(voice_data):
         engine_speak("You must be somewhere near here, as per Google maps")    
 
 
+    #12 read some news
+    if there_exists(['news']):
+        
+        url="https://www.indiatoday.in/"
+        webbrowser.get().open(url)
+        engine_speak('Here are some headlines from India Today,Happy reading')
+        time.sleep(6)
+
+
     if there_exists(["exit", "quit", "goodbye"]):
         engine_speak("bye")
         exit()
 
       
-   
-   
-
-
-time.sleep(1)
 
 person_obj = person()
 asis_obj = asis()
@@ -214,3 +218,6 @@ while(1):
     print("Done")
     print("Q:", voice_data)
     respond(voice_data) # respond
+
+
+    
